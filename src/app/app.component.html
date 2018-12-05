@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div *ngIf="paises !=null; else: espera">
+    <table class="table mt-5">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Capital</th>
+          <th>Region</th>
+          <th>Population</th>
+          <th>Flag</th>
+        </tr>
+      </thead>
+      <tbody style="background: white">
+        <tr *ngFor="let pais of paises">
+          <td>{{pais.name}}</td>
+          <td>{{pais.capital}}</td>
+          <td>{{pais.region}}</td>
+          <td>{{pais.population}}</td>
+          <td>
+              <img src="{{pais.flag}}" alt="Smiley face" width="42" height="42">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <ng-template #espera>
+    <div class="alert alert-warning" rolle="alert">
+Espera datos de origen
+    </div>
+  </ng-template>
+</div>
